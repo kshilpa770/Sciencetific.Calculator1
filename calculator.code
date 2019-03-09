@@ -1,0 +1,86 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include<stdio.h>
+// utility function which calculate roots of  
+double main()
+{
+   int choice;
+   long num1, num2, x;          //Use the Long data type to contain integer numbers that are too large to fit in the Integer data type.
+
+   printf("Please choose your option:"
+          "\n1 = Addition"
+          "\n2 = Subtraction"
+          "\n3 = Multiplication"
+          "\n4 = Division"
+          "\n5 = Squares"
+          "\n6 = exit"
+          "\n\nChoice: ");
+   scanf("%d", &choice);
+
+   //while loop check whether the choice is in the given range
+   while(choice < 1 || choice > 6)
+   {
+      printf("\nPlease choose the above mentioned option."
+             "\nChoice: ");
+      scanf("%d", &choice);
+   }
+
+   switch (choice)          
+   {
+   case 1:                                             // code to be executed if choice is equal to case 1
+      printf("Enter two numbers: \n");
+      scanf("%ld %ld", &num1, &num2);
+      x = num1 + num2;
+      printf("Sum = %ld", x);
+      break;
+
+   case 2:                                             // code to be executed if choice is equal to case 2
+      printf("Enter two numbers: \n");
+      scanf("%ld %ld", &num1, &num2);
+      x = num1 - num2;
+      printf("Subtraction = %ld", x);
+      break;
+
+   case 3:                                              // code to be executed if choice is equal to case 3
+      printf("Enter two numbers: \n");
+      scanf("%ld %ld", &num1, &num2);
+      x = num1 * num2;
+      printf("Product = %ld", x);
+      break;
+
+   case 4:                                              // code to be executed if choice is equal to case 4  
+      printf("Enter Dividend: ");
+      scanf("%ld", &num1);
+      printf("Enter Divisor: ");
+      scanf("%ld", &num2);
+
+     //while loop checks for divisor whether it is zero or not
+     while(num2 == 0)
+     {
+        printf("\nDivisor cannot be zero."
+               "\nEnter divisor once again: ");
+        scanf("%ld", &num2);
+     }
+     x = num1 / num2;
+     printf("\nQuotient = %ld", x);
+     break;
+
+   case 5:                                              // code to be executed if choice is equal to case 5
+      printf("Enter any number: \n");
+      scanf("%ld", &num1);
+      x = num1 * num1;
+      printf("Square = %ld", x);
+      break;
+
+   case 6:                                            // code to be executed if choice doesn't match any case 6
+   return;
+
+   default: printf("\nError");
+   }
+}
